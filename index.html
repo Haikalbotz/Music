@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-white flex items-center justify-center h-screen">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg text-center w-full max-w-2xl">
+        <div class="mb-6">
+            <img id="cover-art" src="https://via.placeholder.com/150" alt="Cover Art" class="w-48 h-48 rounded-full mx-auto rotate-animation">
+        </div>
+        <h1 id="song-title" class="text-2xl font-bold mb-2">Song Title</h1>
+        <p id="artist" class="text-gray-400 mb-6">Artist</p>
+        <audio id="audio" controls class="hidden">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="flex items-center justify-center space-x-4">
+            <button id="prev" class="bg-gray-700 p-3 rounded-full hover:bg-gray-600 play-pause-animation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="play-pause" class="bg-green-500 p-4 rounded-full hover:bg-green-600 play-pause-animation">
+                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                </svg>
+                <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
+            <button id="next" class="bg-gray-700 p-3 rounded-full hover:bg-gray-600 play-pause-animation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+        <div class="mt-6">
+            <input id="progress" type="range" min="0" max="100" value="0" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+        </div>
+        <div class="mt-4">
+            <input type="file" id="file-input" accept="audio/*" class="hidden" multiple>
+            <label for="file-input" class="bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-600">
+                Upload Music
+            </label>
+        </div>
+        <!-- Daftar Lagu -->
+        <div class="mt-6 text-left">
+            <h2 class="text-xl font-bold mb-4">Playlist</h2>
+            <ul id="playlist" class="space-y-2 max-h-40 overflow-y-auto">
+                <!-- Daftar lagu akan muncul di sini -->
+            </ul>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

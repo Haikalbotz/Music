@@ -1,0 +1,23 @@
+@keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .rotate-animation {
+            animation: rotate 10s linear infinite;
+        }
+        .play-pause-animation {
+            transition: transform 0.2s ease-in-out;
+        }
+        .play-pause-animation:hover {
+            transform: scale(1.1);
+        }
+        /* Background dengan tema musik */
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
